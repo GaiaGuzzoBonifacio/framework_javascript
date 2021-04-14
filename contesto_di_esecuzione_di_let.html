@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable scope</title>
+</head>
+<body>
+    <script>
+        const  colors = ['red','green','blue']
+
+        var index;
+        // 2014 ES5
+        for (index = 0; index < colors.length; index++) {
+                
+                element = colors[index];
+        }
+
+        console.log(index,element);
+
+        for (let k = 0; k < colors.length; k++) {
+            const element = colors[k];
+            // console.log("ciccio",element)
+        }
+ 
+        console.log(element);
+        // questo console.log da errore perchè k smette di esistere fuori
+        // dal contesto di blocco (block scope) del ciclo.
+        //console.log(k);
+       
+        
+
+    </script>
+</body>
+</html>
